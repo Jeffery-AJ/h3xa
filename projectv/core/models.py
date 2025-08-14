@@ -160,16 +160,10 @@ class Transaction(models.Model):
 
     def save(self, *args, **kwargs):
         """Update account balance when transaction is saved"""
-        is_new = self.pk is None
-        old_instance = None
-        
-        if not is_new:
-            old_instance = Transaction.objects.get(pk=self.pk)
-        
+        # This logic is complex and can cause issues with get_or_create.
+        # It's better to handle balance updates in a separate process
+        # or signal handler after the transaction is reliably saved.
         super().save(*args, **kwargs)
-        
-        # Update account balances
-        self._update_account_balances(old_instance)
 
     def _update_account_balances(self, old_instance=None):
         """Update account balances based on transaction"""

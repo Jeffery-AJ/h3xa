@@ -155,6 +155,8 @@ class GithubLogin(SocialLoginView):
 
 @method_decorator(csrf_exempt, name='dispatch')
 class GoogleAuthURL(APIView):
+    permission_classes = [AllowAny]
+    
     def get(self, request):
         try:
             
@@ -185,6 +187,8 @@ class GoogleAuthURL(APIView):
 
 @method_decorator(csrf_exempt, name='dispatch')
 class GitHubAuthURL(APIView):
+    permission_classes = [AllowAny]
+    
     def get(self, request):
         try:
             try:
@@ -214,6 +218,7 @@ from rest_framework.decorators import api_view
 
 @csrf_exempt
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def google_callback(request):
     print(f"Session Key: {request.session.session_key}")
     print(f"Session Cookies: {request.COOKIES}")
@@ -385,6 +390,7 @@ def google_callback(request):
 
 @csrf_exempt
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def github_callback(request):
     """Exchange authorization code for tokens."""
     code = request.data.get('code')

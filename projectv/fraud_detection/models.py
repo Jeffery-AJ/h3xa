@@ -10,6 +10,7 @@ class FraudDetectionRule(models.Model):
     RULE_TYPES = [
         ('VELOCITY', 'Transaction Velocity'),
         ('AMOUNT_ANOMALY', 'Amount Anomaly'),
+        ('AMOUNT_THRESHOLD', 'Amount Threshold'),
         ('LOCATION_ANOMALY', 'Location Anomaly'),
         ('PATTERN_ANOMALY', 'Pattern Anomaly'),
         ('TIME_ANOMALY', 'Time Anomaly'),

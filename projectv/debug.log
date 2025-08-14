@@ -735,3 +735,368 @@ D:\h3xa\projectv\fraud_detection\ai_engine.py changed, reloading.
 Watching for file changes with StatReloader
 D:\h3xa\projectv\fraud_detection\ai_engine.py changed, reloading.
 Watching for file changes with StatReloader
+Unauthorized: /api/fraud/rules/
+"GET /api/fraud/rules/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 738
+Internal Server Error: /api/fraud/rules/
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "fraud_detection_frauddetectionrule" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_frauddete...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\pagination.py", line 211, in paginate_queryset
+    self.page = paginator.page(page_number)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 89, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "fraud_detection_frauddetectionrule" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_frauddete...
+                                          ^
+
+"GET /api/fraud/rules/ HTTP/1.1" 500 202660
+Bad Request: /api/fraud/rules/
+"POST /api/fraud/rules/ HTTP/1.1" 400 61
+Internal Server Error: /api/fraud/alerts/
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "fraud_detection_fraudalert" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_fraudaler...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\pagination.py", line 211, in paginate_queryset
+    self.page = paginator.page(page_number)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 89, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "fraud_detection_fraudalert" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_fraudaler...
+                                          ^
+
+"GET /api/fraud/alerts/ HTTP/1.1" 500 202294
+Internal Server Error: /api/fraud/alerts/dashboard/
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "fraud_detection_fraudalert" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_fraudaler...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\h3xa\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\projectv\fraud_detection\views.py", line 204, in dashboard
+    status_counts[status_key] = recent_alerts.filter(status=status_key).count()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\h3xa\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "fraud_detection_fraudalert" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "fraud_detection_fraudaler...
+                                          ^
+
+"GET /api/fraud/alerts/dashboard/ HTTP/1.1" 500 172550
+Not Found: /api/fraud/metrics/real_time_stats/
+"GET /api/fraud/metrics/real_time_stats/ HTTP/1.1" 404 23
+Method Not Allowed: /api/fraud/alerts/analyze_transaction/
+"POST /api/fraud/alerts/analyze_transaction/ HTTP/1.1" 405 41
+"GET /api/ai/health/ HTTP/1.1" 200 52
+"GET /api/ai/anomalies/ HTTP/1.1" 200 52
+"GET /api/ai/categorization/ HTTP/1.1" 200 52
+"GET /api/ai/budget-insights/ HTTP/1.1" 200 52
+"GET /api/ai/goal-recommendations/ HTTP/1.1" 200 52
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /api/fraud/rules/ HTTP/1.1" 200 52
+Bad Request: /api/fraud/rules/
+"POST /api/fraud/rules/ HTTP/1.1" 400 61
+"GET /api/fraud/alerts/ HTTP/1.1" 200 52
+D:\h3xa\projectv\fraud_detection\models.py changed, reloading.
+Watching for file changes with StatReloader
+Created default categories for company Sample Corp
+Error in auto-analysis for transaction ade29b28-28e4-43d1-8d66-5a7daec8d3f1: Object of type UUID is not JSON serializable
+Error in auto-analysis for transaction 97880ac6-dcac-4b47-8581-887f25666bb3: Object of type UUID is not JSON serializable
+Error in auto-analysis for transaction dc4322d2-fc6d-47d6-9c35-5e8d5130b7f4: Object of type UUID is not JSON serializable
+Updating health score for company 0afbbcb1-7556-4ffb-a56d-c3fa61bb8548 due to large transaction
+Financial health scoring error: Cannot filter a query once a slice has been taken.
+Error updating health score for company 0afbbcb1-7556-4ffb-a56d-c3fa61bb8548: Cannot filter a query once a slice has been taken.
+Error in auto-analysis for transaction f19cb272-9c9d-4f7a-b464-9f3267fee430: Object of type UUID is not JSON serializable
+Updating health score for company 0afbbcb1-7556-4ffb-a56d-c3fa61bb8548 due to large transaction
+Financial health scoring error: Cannot filter a query once a slice has been taken.
+Error updating health score for company 0afbbcb1-7556-4ffb-a56d-c3fa61bb8548: Cannot filter a query once a slice has been taken.
+Error in auto-analysis for transaction 43af4ff2-14b5-489e-953b-c363a6cf5823: Object of type UUID is not JSON serializable
+Error in auto-analysis for transaction 92924a7f-b64f-4586-8dc7-d686ae27faaf: Object of type UUID is not JSON serializable
+Error in auto-analysis for transaction 5aca03f2-4c5b-4c4f-b205-6f3f41a9fbc9: Object of type UUID is not JSON serializable
+Error in auto-analysis for transaction 89447b4f-b735-4536-8784-a0f67b4c8ba8: Object of type UUID is not JSON serializable
+Watching for file changes with StatReloader
+Unauthorized: /api/fraud/rules/
+"POST /api/fraud/rules/ HTTP/1.1" 401 172
+Forbidden: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 403 45
+"POST /api/auth/login/ HTTP/1.1" 200 737
+"POST /api/fraud/rules/ HTTP/1.1" 201 393
+"GET /api/fraud/rules/ HTTP/1.1" 200 445
+"OPTIONS /api/auth/github/auth-url/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/github/auth-url/
+"GET /api/auth/github/auth-url/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/github/auth-url/
+"GET /api/auth/github/auth-url/ HTTP/1.1" 401 58
+"OPTIONS /api/auth/google/auth-url/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/google/auth-url/
+"GET /api/auth/google/auth-url/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/google/auth-url/
+"GET /api/auth/google/auth-url/ HTTP/1.1" 401 58
+D:\h3xa\projectv\h3xa\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\h3xa\projectv\h3xa\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\h3xa\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/auth/login/ HTTP/1.1" 200 738
+"GET /api/auth/github/auth-url/ HTTP/1.1" 200 258
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+"OPTIONS /api/auth/google/callback/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/google/callback/
+"POST /api/auth/google/callback/ HTTP/1.1" 401 58
+"GET /api/auth/github/auth-url/ HTTP/1.1" 200 258
+D:\h3xa\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\h3xa\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+"POST /api/auth/google/callback/ HTTP/1.1" 200 433
+D:\h3xa\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/github/auth-url/ HTTP/1.1" 200 258
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+"POST /api/auth/google/callback/ HTTP/1.1" 200 433
+"GET /api/auth/google/auth-url/ HTTP/1.1" 200 334
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 3916
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+Method Not Allowed: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 405 5704
+"POST /api/auth/login/ HTTP/1.1" 200 737
+Not Found: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 404 29
+Created default categories for company Tech Startup LLC Test2
+"POST /api/v1/companies/ HTTP/1.1" 201 424
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 408
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 665
