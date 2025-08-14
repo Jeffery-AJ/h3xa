@@ -1,0 +1,976 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "ProjectV AI CFO - Complete Financial System",
+		"description": "Comprehensive API collection for testing the AI CFO financial advisory system with RAG analysis and CSV processing capabilities.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "🔐 Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"your_username\",\n    \"password\": \"your_password\"\n}"
+						},
+						"url": {
+							"raw": "{{auth_base_url}}/login/",
+							"host": [
+								"{{auth_base_url}}"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "🏢 Company Management",
+			"item": [
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tech Startup Inc\",\n    \"industry\": \"Technology\",\n    \"currency\": \"USD\",\n    \"annual_revenue\": 1000000.00,\n    \"employees_count\": 25,\n    \"description\": \"AI-powered software solutions company\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/companies/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/companies/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "🤖 AI CFO Agent",
+			"item": [
+				{
+					"name": "Chat with AI CFO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"What's our current financial health and cash flow situation?\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/chat/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"chat",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CFO Chat - Cash Flow Analysis",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Analyze our cash flow trends and provide recommendations for improvement\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/chat/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"chat",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CFO Chat - Investment Strategy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Should we invest $50,000 in new equipment this quarter? What's the financial impact?\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/chat/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"chat",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cash Flow Advice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"cash_flow\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/get_financial_advice/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"get_financial_advice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cost Reduction Advice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"cost_reduction\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/get_financial_advice/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"get_financial_advice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Investment Strategy Advice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"investment\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/get_financial_advice/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"get_financial_advice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Risk Management Advice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"risk_management\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/get_financial_advice/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"get_financial_advice",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get CFO Expertise Areas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/expertise_areas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"expertise_areas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CFO Comprehensive Upload Analysis",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bulk_upload_id\": \"{{bulk_upload_id}}\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/analyze_upload/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"analyze_upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session Summary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/session_summary/?company_id={{company_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"session_summary",
+								""
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "{{company_id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear CFO Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ai-cfo/clear_session/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ai-cfo",
+								"clear_session",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "📊 RAG Analysis",
+			"item": [
+				{
+					"name": "Analyze Bulk Upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bulk_upload_id\": \"{{bulk_upload_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/rag-analysis/analyze_upload/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rag-analysis",
+								"analyze_upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Financial Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"What were our top 5 expense categories last month and how much did we spend?\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/rag-analysis/query_data/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rag-analysis",
+								"query_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query - Revenue Analysis",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"Show me our revenue trends and identify growth opportunities\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/rag-analysis/query_data/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rag-analysis",
+								"query_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query - Cash Flow Pattern",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"Analyze our cash flow patterns and identify any concerning trends\",\n    \"company_id\": \"{{company_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/rag-analysis/query_data/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rag-analysis",
+								"query_data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analyze CSV Content Directly",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Upload a CSV file with financial data (transactions, accounts, etc.)"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/rag-analysis/analyze_csv_content/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rag-analysis",
+								"analyze_csv_content",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "📁 CSV Bulk Upload",
+			"item": [
+				{
+					"name": "Upload Transactions CSV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with columns: date,description,amount,category,account_name"
+								},
+								{
+									"key": "upload_type",
+									"value": "transactions",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "{{company_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/bulk-uploads/upload/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bulk-uploads",
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Accounts CSV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with columns: name,account_type,bank_name,account_number,initial_balance,currency"
+								},
+								{
+									"key": "upload_type",
+									"value": "accounts",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "{{company_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/bulk-uploads/upload/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bulk-uploads",
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Categories CSV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "CSV file with columns: name,category_type,description"
+								},
+								{
+									"key": "upload_type",
+									"value": "categories",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "{{company_id}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/bulk-uploads/upload/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bulk-uploads",
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upload Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/bulk-uploads/{{bulk_upload_id}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bulk-uploads",
+								"{{bulk_upload_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Uploads",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/bulk-uploads/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bulk-uploads",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "📈 Financial Data",
+			"item": [
+				{
+					"name": "Get Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/accounts/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/transactions/?limit=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/categories/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Budgets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/budgets/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"budgets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Financial Goals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/goals/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"goals",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "auth_base_url",
+			"value": "http://localhost:8000/api/auth",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "your_jwt_token_here",
+			"type": "string"
+		},
+		{
+			"key": "company_id",
+			"value": "your_company_uuid_here",
+			"type": "string"
+		},
+		{
+			"key": "bulk_upload_id",
+			"value": "your_bulk_upload_uuid_here",
+			"type": "string"
+		}
+	]
+}

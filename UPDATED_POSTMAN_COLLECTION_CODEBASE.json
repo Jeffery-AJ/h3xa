@@ -1,0 +1,1017 @@
+{
+  "info": {
+    "name": "Financial Analytics Platform API - Complete",
+    "description": "Complete API collection based on actual codebase analysis",
+    "version": "2.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "company_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "account_id", 
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "transaction_id",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "🔐 Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password1\": \"ComplexPass123!\",\n    \"password2\": \"ComplexPass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/register/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "register", ""]
+            }
+          }
+        },
+        {
+          "name": "Login User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.environment.set('access_token', response.access_token);",
+                  "    pm.environment.set('refresh_token', response.refresh_token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"ComplexPass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login", ""]
+            }
+          }
+        },
+        {
+          "name": "Get User Details",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/auth/user/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "user", ""]
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"refresh\": \"{{refresh_token}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/token/refresh/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "token", "refresh", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🏢 Companies",
+      "item": [
+        {
+          "name": "List Companies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.environment.set('company_id', response.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Tech Startup LLC\",\n    \"industry\": \"Technology\",\n    \"currency\": \"USD\",\n    \"annual_revenue\": \"1500000.00\",\n    \"employee_count\": 25,\n    \"registration_number\": \"LLC123456\",\n    \"tax_id\": \"12-3456789\",\n    \"address\": \"123 Innovation Drive, Tech City, TC 12345\",\n    \"phone\": \"+1-555-0123\",\n    \"website\": \"https://techstartup.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Company Dashboard",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/{{company_id}}/dashboard/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", "{{company_id}}", "dashboard", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Company Analytics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/{{company_id}}/analytics/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", "{{company_id}}", "analytics", ""]
+            }
+          }
+        },
+        {
+          "name": "Generate Financial Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"report_type\": \"monthly\",\n    \"start_date\": \"2025-01-01\",\n    \"end_date\": \"2025-01-31\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/{{company_id}}/generate_report/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", "{{company_id}}", "generate_report", ""]
+            }
+          }
+        },
+        {
+          "name": "Get AI Insights",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"analysis_type\": \"comprehensive\",\n    \"period\": \"last_30_days\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/companies/{{company_id}}/ai_insights/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "companies", "{{company_id}}", "ai_insights", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "💳 Accounts",
+      "item": [
+        {
+          "name": "List Accounts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/accounts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "accounts", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.environment.set('account_id', response.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"company\": \"{{company_id}}\",\n    \"name\": \"Main Business Account\",\n    \"account_type\": \"checking\",\n    \"account_number\": \"1234567890\",\n    \"routing_number\": \"021000021\",\n    \"bank_name\": \"Tech Bank\",\n    \"current_balance\": \"50000.00\",\n    \"currency\": \"USD\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/accounts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "accounts", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Account Balance History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/accounts/{{account_id}}/balance_history/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "accounts", "{{account_id}}", "balance_history", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📊 Categories",
+      "item": [
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/categories/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "categories", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"company\": \"{{company_id}}\",\n    \"name\": \"Software & Tools\",\n    \"category_type\": \"expense\",\n    \"description\": \"Software subscriptions and development tools\",\n    \"color_code\": \"#3498db\",\n    \"is_tax_deductible\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/categories/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "categories", ""]
+            }
+          }
+        },
+        {
+          "name": "Income/Expense Split",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/categories/income_expense_split/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "categories", "income_expense_split", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "💰 Transactions",
+      "item": [
+        {
+          "name": "List Transactions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/?ordering=-transaction_date",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", ""],
+              "query": [
+                {
+                  "key": "ordering",
+                  "value": "-transaction_date"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Transaction",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.environment.set('transaction_id', response.id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"company\": \"{{company_id}}\",\n    \"account\": \"{{account_id}}\",\n    \"amount\": \"1200.00\",\n    \"description\": \"Software subscription payment\",\n    \"transaction_date\": \"2025-01-15T10:30:00Z\",\n    \"reference_number\": \"TXN-001\",\n    \"status\": \"completed\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", ""]
+            }
+          }
+        },
+        {
+          "name": "Transaction Analytics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/analytics/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", "analytics", ""]
+            }
+          }
+        },
+        {
+          "name": "Cash Flow Analysis",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/cashflow_analysis/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", "cashflow_analysis", ""]
+            }
+          }
+        },
+        {
+          "name": "Auto-Categorize Transaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"use_ai\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/{{transaction_id}}/categorize/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", "{{transaction_id}}", "categorize", ""]
+            }
+          }
+        },
+        {
+          "name": "Bulk Categorization",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"transaction_ids\": [\"{{transaction_id}}\"],\n    \"category_id\": \"category-uuid-here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/transactions/bulk_categorize/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "transactions", "bulk_categorize", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎯 Budgets",
+      "item": [
+        {
+          "name": "List Budgets",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/budgets/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "budgets", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Budget",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"company\": \"{{company_id}}\",\n    \"name\": \"Q1 2025 Operations Budget\",\n    \"budget_type\": \"expense\",\n    \"amount\": \"25000.00\",\n    \"period\": \"quarterly\",\n    \"start_date\": \"2025-01-01\",\n    \"end_date\": \"2025-03-31\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/budgets/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "budgets", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎯 Financial Goals",
+      "item": [
+        {
+          "name": "List Financial Goals",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/goals/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "goals", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Financial Goal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"company\": \"{{company_id}}\",\n    \"name\": \"Emergency Fund\",\n    \"goal_type\": \"savings\",\n    \"target_amount\": \"100000.00\",\n    \"target_date\": \"2025-12-31\",\n    \"current_amount\": \"15000.00\",\n    \"description\": \"Build emergency fund equal to 6 months expenses\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/goals/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "goals", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📁 Bulk Upload",
+      "item": [
+        {
+          "name": "Upload CSV File",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "path/to/transactions.csv"
+                },
+                {
+                  "key": "upload_type",
+                  "value": "transactions",
+                  "type": "text"
+                },
+                {
+                  "key": "company_id",
+                  "value": "{{company_id}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/bulk-uploads/upload/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bulk-uploads", "upload", ""]
+            }
+          }
+        },
+        {
+          "name": "List Bulk Uploads",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/bulk-uploads/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bulk-uploads", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🤖 AI CFO Agent",
+      "item": [
+        {
+          "name": "Chat with AI CFO",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"What's our current financial health and cash flow situation?\",\n    \"company_id\": \"{{company_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/ai-cfo/chat/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "ai-cfo", "chat", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Financial Advice",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"topic\": \"cash_flow\",\n    \"company_id\": \"{{company_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/ai-cfo/get_financial_advice/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "ai-cfo", "get_financial_advice", ""]
+            }
+          }
+        },
+        {
+          "name": "Analyze CSV Upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bulk_upload_id\": \"bulk-upload-uuid-here\",\n    \"company_id\": \"{{company_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/ai-cfo/analyze_upload/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "ai-cfo", "analyze_upload", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Expertise Areas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/ai-cfo/expertise_areas/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "ai-cfo", "expertise_areas", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Session Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/ai-cfo/session_summary/?company_id={{company_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "ai-cfo", "session_summary", ""],
+              "query": [
+                {
+                  "key": "company_id",
+                  "value": "{{company_id}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "📊 RAG Analysis",
+      "item": [
+        {
+          "name": "Analyze Upload",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"bulk_upload_id\": \"bulk-upload-uuid-here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/rag-analysis/analyze_upload/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rag-analysis", "analyze_upload", ""]
+            }
+          }
+        },
+        {
+          "name": "Query Financial Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"query\": \"Show me spending trends for the last quarter\",\n    \"company_id\": \"{{company_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/rag-analysis/query_data/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rag-analysis", "query_data", ""]
+            }
+          }
+        },
+        {
+          "name": "Analyze CSV Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"csv_content\": \"Date,Description,Amount\\n2025-01-15,Software License,1200.00\\n2025-01-14,Office Supplies,150.00\",\n    \"data_type\": \"transactions\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/rag-analysis/analyze_csv_content/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rag-analysis", "analyze_csv_content", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🧠 AI Insights",
+      "item": [
+        {
+          "name": "Financial Health Assessment",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/health/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "health", ""]
+            }
+          }
+        },
+        {
+          "name": "Anomaly Detection",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/anomalies/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "anomalies", ""]
+            }
+          }
+        },
+        {
+          "name": "Smart Categorization",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/categorization/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "categorization", ""]
+            }
+          }
+        },
+        {
+          "name": "Budget Insights",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/budget-insights/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "budget-insights", ""]
+            }
+          }
+        },
+        {
+          "name": "Goal Recommendations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/goal-recommendations/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "goal-recommendations", ""]
+            }
+          }
+        },
+        {
+          "name": "AI Dashboard",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/ai/dashboard/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "dashboard", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🏦 Open Banking",
+      "item": [
+        {
+          "name": "List Bank Providers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/providers/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "providers", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Supported Countries",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/providers/countries/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "providers", "countries", ""]
+            }
+          }
+        },
+        {
+          "name": "Initiate Bank Connection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"provider_id\": \"provider-uuid-here\",\n    \"redirect_uri\": \"https://yourapp.com/callback\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/connections/initiate_connection/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "connections", "initiate_connection", ""]
+            }
+          }
+        },
+        {
+          "name": "List Bank Connections",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/connections/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "connections", ""]
+            }
+          }
+        },
+        {
+          "name": "Sync Bank Accounts",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/connections/{{connection_id}}/sync_accounts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "connections", "{{connection_id}}", "sync_accounts", ""]
+            }
+          }
+        },
+        {
+          "name": "List Linked Accounts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/open-banking/accounts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "open-banking", "accounts", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "🛡️ Fraud Detection",
+      "item": [
+        {
+          "name": "List Fraud Rules",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/fraud/rules/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "rules", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Fraud Rule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"High Amount Threshold\",\n    \"rule_type\": \"AMOUNT_THRESHOLD\",\n    \"severity\": \"HIGH\",\n    \"is_active\": true,\n    \"parameters\": {\n        \"amount_threshold\": 10000.00\n    },\n    \"thresholds\": {\n        \"risk_score_threshold\": 80\n    }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/fraud/rules/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "rules", ""]
+            }
+          }
+        },
+        {
+          "name": "List Fraud Alerts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/fraud/alerts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "alerts", ""]
+            }
+          }
+        },
+        {
+          "name": "Fraud Dashboard",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/fraud/alerts/dashboard/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "alerts", "dashboard", ""]
+            }
+          }
+        },
+        {
+          "name": "Analyze Transaction for Fraud",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"transaction_id\": \"{{transaction_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/fraud/alerts/analyze_transaction/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "alerts", "analyze_transaction", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Fraud Metrics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/fraud/metrics/real_time_stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "fraud", "metrics", "real_time_stats", ""]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

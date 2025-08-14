@@ -1,0 +1,4 @@
+name,account_type,balance,account_number,bank_name,currency,is_active
+Main Checking Account,checking,5000.00,1234567890,First National Bank,USD,true
+Business Savings,savings,15000.00,0987654321,First National Bank,USD,true
+Business Credit Card,credit_card,-2500.00,4444555566667777,Chase Bank,USD,true

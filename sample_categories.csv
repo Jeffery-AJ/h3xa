@@ -1,0 +1,5 @@
+name,is_income,is_active
+Food & Dining,false,true
+Office Rent,false,true
+Revenue,true,true
+Marketing,false,true

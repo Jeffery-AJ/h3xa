@@ -1,0 +1,4 @@
+account_name,amount,description,date,transaction_type,category,reference_number
+Main Checking Account,-50.00,Grocery shopping,2023-12-01,expense,Food & Dining,TXN123456
+Main Checking Account,5000.00,Client payment,2023-12-02,income,Revenue,INV001
+Business Credit Card,-1200.00,Marketing campaign,2023-12-03,expense,Marketing,AD2023

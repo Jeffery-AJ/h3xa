@@ -1,0 +1,732 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /api/core/companies/
+"GET /api/core/companies/ HTTP/1.1" 404 2539
+Unauthorized: /api/financial/api/v1/companies/
+"GET /api/financial/api/v1/companies/ HTTP/1.1" 401 58
+Not Found: /
+"GET / HTTP/1.1" 404 2464
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2515
+Not Found: /api/auth
+"GET /api/auth HTTP/1.1" 404 2506
+Not Found: /api/auth/
+"GET /api/auth/ HTTP/1.1" 404 5969
+Method Not Allowed: /api/auth/register/
+"GET /api/auth/register/ HTTP/1.1" 405 8125
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 8453
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 8259
+Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 84, in perform_create
+    user = serializer.save(self.request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\serializers.py", line 269, in save
+    user = adapter.save_user(request, user, self, commit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\allauth\account\adapter.py", line 338, in save_user
+    if form._has_phone_field:
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterSerializer' object has no attribute '_has_phone_field'
+"POST /api/auth/register/ HTTP/1.1" 500 148323
+Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\views.py", line 84, in perform_create
+    user = serializer.save(self.request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\dj_rest_auth\registration\serializers.py", line 269, in save
+    user = adapter.save_user(request, user, self, commit=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\allauth\account\adapter.py", line 338, in save_user
+    if form._has_phone_field:
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RegisterSerializer' object has no attribute '_has_phone_field'
+"POST /api/auth/register/ HTTP/1.1" 500 148345
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2464
+"POST /api/auth/register/ HTTP/1.1" 201 8908
+Internal Server Error: /api/financial/api/v1/companies/
+Traceback (most recent call last):
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "core_company" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "core_company" WHERE "core...
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\generics.py", line 175, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\pagination.py", line 211, in paginate_queryset
+    self.page = paginator.page(page_number)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\paginator.py", line 89, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\paginator.py", line 70, in validate_number
+    if number > self.num_pages:
+                ^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\paginator.py", line 116, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\ProjectV\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "core_company" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "core_company" WHERE "core...
+                                          ^
+
+"GET /api/financial/api/v1/companies/ HTTP/1.1" 500 199207
+Watching for file changes with StatReloader
+"GET /api/financial/api/v1/companies/ HTTP/1.1" 200 52
+Not Found: /api/financial/api/v1/companies/{id}/financial_summary/
+"GET /api/financial/api/v1/companies/%7Bid%7D/financial_summary/ HTTP/1.1" 404 23
+Not Found: /api/financial/api/v1/companies/1/financial_summary/
+"GET /api/financial/api/v1/companies/1/financial_summary/ HTTP/1.1" 404 23
+"GET /api/financial/api/v1/accounts/ HTTP/1.1" 200 52
+Not Found: /api/financial/api/v1/accounts/{id}/balance_history/
+"GET /api/financial/api/v1/accounts/%7Bid%7D/balance_history/?days=30 HTTP/1.1" 404 23
+Unauthorized: /api/financial/api/v1/accounts/
+"GET /api/financial/api/v1/accounts/?company= HTTP/1.1" 401 58
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\ai_insights\models.py changed, reloading.
+OpenAI API key not configured. AI features will be limited.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\ai_insights\signals.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+OpenAI API key not configured. AI features will be limited.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+Not Found: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 404 2690
+D:\ProjectV\projectv\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\h3xa\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+OpenAI API key not configured. AI features will be limited.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+"POST /api/auth/register/ HTTP/1.1" 201 593
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Forbidden: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 403 45
+Internal Server Error: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 500 65
+Bad Request: /api/v1/companies/
+"POST /api/v1/companies/ HTTP/1.1" 400 37
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /api/v1/companies/
+"POST /api/v1/companies/ HTTP/1.1" 400 62
+D:\ProjectV\projectv\core\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Created default categories for company Tech Startup Inc
+"POST /api/v1/companies/ HTTP/1.1" 201 399
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 505
+D:\ProjectV\projectv\core\ai_cfo_agent.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\rag_analyzer.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\rag_analyzer.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\rag_analyzer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 197
+D:\ProjectV\projectv\core\rag_analyzer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 197
+D:\ProjectV\projectv\core\ai_cfo_agent.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 500 76
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Forbidden: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 403 45
+Forbidden: /api/auth/token/refresh/
+"POST /api/auth/token/refresh/ HTTP/1.1" 403 45
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 45
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 45
+Not Found: /
+"GET / HTTP/1.1" 404 2607
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2658
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+D:\ProjectV\projectv\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 45
+Forbidden: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 403 45
+Not Found: /en-GB/api/auth/
+"GET /en-GB/api/auth/ HTTP/1.1" 404 2670
+Not Found: /api/auth/
+"GET /api/auth/ HTTP/1.1" 404 6112
+"GET /api/auth/login HTTP/1.1" 301 0
+Method Not Allowed: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 405 5699
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+"GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+"POST /api/auth/login/ HTTP/1.1" 200 6691
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 654
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+Internal Server Error: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 500 65
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 676
+Unauthorized: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 401 172
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 654
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+Method Not Allowed: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 405 41
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 230
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 230
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 224
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 6691
+Internal Server Error: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 500 65
+Not Found: /api/financial/api/v1/companies/
+"GET /api/financial/api/v1/companies/ HTTP/1.1" 404 2718
+Unauthorized: /api/v1/companies/
+"GET /api/v1/companies/ HTTP/1.1" 401 172
+"GET /api/v1/companies/ HTTP/1.1" 200 451
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 224
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 224
+D:\ProjectV\projectv\core\views.py changed, reloading.
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 224
+D:\ProjectV\projectv\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 6691
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 971
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 789
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 402
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 746
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 746
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/bulk-uploads/
+"GET /api/v1/bulk-uploads/ HTTP/1.1" 401 172
+Internal Server Error: /api/v1/bulk-uploads/
+Traceback (most recent call last):
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProjectV\.venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `total_records` is not valid for model `BulkUpload` in `core.serializers.BulkUploadSerializer`.
+"GET /api/v1/bulk-uploads/ HTTP/1.1" 500 181470
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 749
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+D:\ProjectV\projectv\core\apps.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 675
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 749
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 6691
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 410
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\core\bulk_views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 6691
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 405
+Unauthorized: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 401 172
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 410
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 652
+Watching for file changes with StatReloader
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Not Found: /en-US/api/auth/login/
+"GET /en-US/api/auth/login/ HTTP/1.1" 404 3001
+Unauthorized: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 401 3745
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+Watching for file changes with StatReloader
+Forbidden: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 403 45
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 45
+Unauthorized: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 401 3745
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 58
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\ProjectV\projectv\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/auth/login/ HTTP/1.1" 200 738
+Bad Request: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 400 34
+Created default categories for company Tech Startup LLC
+"POST /api/v1/companies/ HTTP/1.1" 201 416
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 654
+Internal Server Error: /api/v1/ai-cfo/get_financial_advice/
+"POST /api/v1/ai-cfo/get_financial_advice/ HTTP/1.1" 500 154
+Bad Request: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 400 28
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 755
+Bad Request: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 400 163
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 402
+"POST /api/v1/rag-analysis/analyze_upload/ HTTP/1.1" 200 705
+Method Not Allowed: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 405 5666
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+Forbidden: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 403 45
+"GET /api/auth/register HTTP/1.1" 301 0
+Method Not Allowed: /api/auth/register/
+"GET /api/auth/register/ HTTP/1.1" 405 8684
+"POST /api/auth/register/ HTTP/1.1" 201 8921
+Bad Request: /api/v1/companies/
+"POST /api/v1/companies/ HTTP/1.1" 400 81
+Bad Request: /api/v1/companies/
+"POST /api/v1/companies/ HTTP/1.1" 400 81
+Created default categories for company Tech Startup LLC Test
+"POST /api/v1/companies/ HTTP/1.1" 201 421
+Not Found: /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/dashboard/
+"GET /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/dashboard/ HTTP/1.1" 404 35260
+"GET /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/ HTTP/1.1" 200 421
+Not Found: /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/generate_report/
+"POST /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/generate_report/ HTTP/1.1" 404 35279
+Method Not Allowed: /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/
+"POST /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/ HTTP/1.1" 405 41
+Not Found: /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/generate_report/
+"POST /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/generate_report/ HTTP/1.1" 404 35279
+Not Found: /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/ai_insights/
+"POST /api/v1/companies/3e2bc3b7-fa57-49d8-99a3-cbe314d4e0f2/ai_insights/ HTTP/1.1" 404 35267
+Created default categories for company Tech Startup LLC Test
+"POST /api/v1/companies/ HTTP/1.1" 201 422
+"GET /api/v1/companies/511d78ea-6e6c-42a7-a53c-214e27078021/ HTTP/1.1" 200 422
+"POST /api/v1/accounts/ HTTP/1.1" 201 541
+Bad Request: /api/v1/transactions/
+"POST /api/v1/transactions/ HTTP/1.1" 400 90
+Created default categories for company Tech Startup LLC test3
+"POST /api/v1/companies/ HTTP/1.1" 201 423
+Bad Request: /api/v1/bulk-uploads/upload/
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 400 163
+"POST /api/v1/bulk-uploads/upload/ HTTP/1.1" 201 678
+Not Found: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 404 29
+Not Found: /api/v1/ai-cfo/chat/
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 404 29
+"POST /api/v1/ai-cfo/chat/ HTTP/1.1" 200 660
+Not Found: /api/v1/rag-analysis/analyze_upload/
+"POST /api/v1/rag-analysis/analyze_upload/ HTTP/1.1" 404 33
+"POST /api/v1/rag-analysis/analyze_upload/ HTTP/1.1" 200 702
